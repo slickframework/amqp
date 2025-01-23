@@ -1,0 +1,5 @@
+services:
+  php:
+    image: fsilva/php:8.2-cli
+    volumes:
+      - ./:/var/www/app
