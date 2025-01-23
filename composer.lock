@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "516695a69aaec4596ded10df2b99a1e5",
+    "content-hash": "da7118d434542b6c11ce3579e884b452",
     "packages": [
         {
             "name": "graham-campbell/result-type",
@@ -2449,6 +2449,65 @@
             "time": "2025-01-10T10:30:06+00:00"
         },
         {
+            "name": "phpstan/phpstan",
+            "version": "2.1.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpstan/phpstan.git",
+                "reference": "34527c1ddec72ac3768bb66c5b6ee1b1878241d6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/34527c1ddec72ac3768bb66c5b6ee1b1878241d6",
+                "reference": "34527c1ddec72ac3768bb66c5b6ee1b1878241d6",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4|^8.0"
+            },
+            "conflict": {
+                "phpstan/phpstan-shim": "*"
+            },
+            "default-branch": true,
+            "bin": [
+                "phpstan",
+                "phpstan.phar"
+            ],
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "PHPStan - PHP Static Analysis Tool",
+            "keywords": [
+                "dev",
+                "static analysis"
+            ],
+            "support": {
+                "docs": "https://phpstan.org/user-guide/getting-started",
+                "forum": "https://github.com/phpstan/phpstan/discussions",
+                "issues": "https://github.com/phpstan/phpstan/issues",
+                "security": "https://github.com/phpstan/phpstan/security/policy",
+                "source": "https://github.com/phpstan/phpstan-src"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/ondrejmirtes",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/phpstan",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-01-23T13:51:33+00:00"
+        },
+        {
             "name": "phpunit/php-code-coverage",
             "version": "11.0.x-dev",
             "source": {
@@ -4762,8 +4821,8 @@
         "slick/module-api": 20,
         "phpmd/phpmd": 20,
         "phpunit/phpunit": 20,
-        "squizlabs/php_codesniffer": 20,
-        "slick/webstack": 20
+        "slick/webstack": 20,
+        "squizlabs/php_codesniffer": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

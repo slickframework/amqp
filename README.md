@@ -1,4 +1,4 @@
-# Slick Object-relational mapping (amqp) package
+# Slick AMQP Module
 
 [![Latest Version](https://img.shields.io/github/release/slickframework/amqp.svg?style=flat-square)](https://github.com/slickframework/amqp/releases)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
@@ -6,11 +6,20 @@
 [![Quality Score](https://img.shields.io/scrutinizer/g/slickframework/amqp/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/slickframework/amqp?branch=master)
 [![Total Downloads](https://img.shields.io/packagist/dt/slick/amqp.svg?style=flat-square)](https://packagist.org/packages/slick/amqp)
 
+The Slick AMQP module provides an easy-to-use integration with the Advanced Message Queuing
+Protocol (AMQP), enabling seamless communication between producers and consumers in PHP
+applications. Designed to work with message brokers like RabbitMQ, this module supports
+various exchange types, including **fanout**, **direct**, **headers**, and **topic**,
+offering robust solutions for a wide range of messaging patterns.
 
-`Slick\amqp` This module offers support to incorporate the Advanced Message Queuing Protocol (AMQP)
-into the Slick framework. With this module, developers using Slick-php can now seamlessly integrate
-and use the AMQP protocol, expanding the framework's capacity for efficient and flexible message
-routing and queueing.
+This module is highly versatile and can be used in **any PHP project**, making it a great
+choice for developers seeking advanced messaging capabilities. Additionally, it includes
+special features to simplify integration, enablement, and configuration within the
+Slick framework environment, offering an enhanced developer experience for Slick-based applications.
+
+Whether you are building scalable microservices, managing asynchronous workflows, or
+implementing event-driven architectures, the Slick AMQP module ensures reliable and efficient
+message delivery across your system.
 
 This package is compliant with PSR-2 code standards and PSR-4 autoload standards.
 It also applies the semantic version 2.0.0 specification.

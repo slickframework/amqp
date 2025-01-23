@@ -1,6 +1,6 @@
 {
     "name": "slick/amqp",
-    "description": "An AMQP-support module for the Slick-php framework.",
+    "description": "AMQP module for Slick enabling seamless message exchange with brokers like RabbitMQ through producers and consumers.",
     "type": "library",
     "version": "v0.1.0",
     "require": {
@@ -12,13 +12,17 @@
         "slick",
         "AMQP",
         "slick-modules",
-        "RabbitMQ"
+        "RabbitMQ",
+        "Message Queue",
+        "Producers",
+        "Consumers"
     ],
     "require-dev": {
         "phpmd/phpmd": "dev-master",
+        "phpstan/phpstan": "2.1.x-dev",
         "phpunit/phpunit": "11.5.x-dev",
-        "squizlabs/php_codesniffer": "4.0.x-dev",
-        "slick/webstack": "2.x-dev"
+        "slick/webstack": "2.x-dev",
+        "squizlabs/php_codesniffer": "4.0.x-dev"
     },
     "license": "MIT",
     "autoload": {
