@@ -9,7 +9,7 @@
     <rule ref="rulesets/cleancode.xml/ElseExpression" />
     <rule ref="rulesets/cleancode.xml/StaticAccess">
         <properties>
-            <property name="exceptions" value="Firebase\JWT\JWT" />
+            <property name="exceptions" value="Firebase\JWT\JWT,Slick\Amqp\Producer\BasicProducer" />
             <property name="ignorepattern" value="/^(create(\w*)|from|isValid|instance)/i" />
         </properties>
 

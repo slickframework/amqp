@@ -14,6 +14,7 @@ namespace Slick\Amqp;
 use JsonSerializable;
 use OutOfBoundsException;
 use PhpAmqpLib\Channel\AMQPChannel;
+use PhpAmqpLib\Exception\AMQPEmptyDeliveryTagException;
 use PhpAmqpLib\Message\AMQPMessage;
 use ReflectionClass;
 use ReflectionException;
@@ -220,6 +221,20 @@ class Message
     public function parsedBody(): mixed
     {
         return $this->parsedContent;
+    }
+
+    /**
+     * deliveryTag
+     *
+     * @return int
+     */
+    public function deliveryTag(): int
+    {
+        try {
+            return $this->message->getDeliveryTag();
+        } catch (AMQPEmptyDeliveryTagException) {
+            return -1;
+        }
     }
 
     /**

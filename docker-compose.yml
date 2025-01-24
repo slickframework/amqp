@@ -9,3 +9,14 @@ services:
       - XDEBUG_MODE=develop,coverage
       - ENABLE_XDEBUG_FOR_MAC=yes
       - ENABLE_OPCACHE=no
+
+  rabbitmq:
+    image: rabbitmq:4-management
+    ports:
+      - 15672:15672
+      - 25672:25672
+      - 5672:5672
+      - 5671:5671
+    environment:
+      - RABBITMQ_DEFAULT_USER=user
+      - RABBITMQ_DEFAULT_PASS=secret

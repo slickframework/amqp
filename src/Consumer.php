@@ -123,9 +123,9 @@ interface Consumer
      * Handles message consuming
      *
      * @param callable $callable
-     * @param array<string,mixed>|null $options
+     * @param array<string,mixed> $options
      */
-    public function consume(callable $callable, ?array $options = []): void;
+    public function consume(callable $callable, array $options = []): void;
 
     /**
      * Sends an acknowledgment back to the AMQP server

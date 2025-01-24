@@ -16,7 +16,8 @@ namespace Slick\Amqp;
  *
  * @package Slick\Amqp
  */
-interface Producer {
+interface Producer
+{
 
     const TYPE_DEFAULT = 'direct';
     const TYPE_DIRECT  = 'direct';
@@ -38,7 +39,7 @@ interface Producer {
      * @param Message $message
      * @param string|null $routingKey
      */
-    public function publish(Message $message, ?string $routingKey = null): void;
+    public function publish(Message $message, ?string $routingKey = ""): void;
 
     /**
      * Exchange passive
