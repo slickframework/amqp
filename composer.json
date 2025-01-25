@@ -33,6 +33,7 @@
     "autoload-dev": {
         "psr-4": {
             "Tests\\Slick\\Amqp\\": "tests/unit",
+            "Integration\\Slick\\Amqp\\": "tests/integration",
             "App\\": "tests/app/src"
         }
     },
