@@ -28,9 +28,11 @@ use Stringable;
 class Message
 {
 
+    use MessageHeadersMethods;
+
     const DELIVERY_MODE    = 'delivery_mode';
     const TYPE             = 'type';
-    const HEADERS          = 'headers';
+    const HEADERS          = 'application_headers';
     const CONTENT_TYPE     = 'content_type';
     const CONTENT_ENCODING = 'content_encoding';
     const MESSAGE_ID       = 'message_id';
@@ -55,6 +57,9 @@ class Message
      * @var mixed
      */
     private mixed $parsedContent = null;
+
+    /** @var array<string, mixed>  */
+    protected array $headers = [];
 
     /**
      * Creates a Message
@@ -87,6 +92,14 @@ class Message
         $message->message = $amqpMessage;
         $message->body = $amqpMessage->getBody();
         $message->parseContent();
+
+        if ($amqpMessage->has(self::HEADERS)) {
+            foreach ($amqpMessage->get(self::HEADERS) as $key => $value) {
+                list(, $val) = $value;
+                $message->headers[$key] = $val;
+            }
+        }
+
         return $message;
     }
 

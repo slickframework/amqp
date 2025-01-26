@@ -9,6 +9,7 @@
 namespace Tests\Slick\Amqp;
 
 use PhpAmqpLib\Message\AMQPMessage;
+use PhpAmqpLib\Wire\AMQPTable;
 use Slick\Amqp\Message;
 use PHPUnit\Framework\TestCase;
 
@@ -107,8 +108,10 @@ class MessageTest extends TestCase
         });
 
         $message = new AMQPMessage($content, [Message::CONTENT_TYPE => 'application/json']);
-        $sub = Message::fromAMQPMessage     ($message);
+        $message->set(Message::HEADERS, new AMQPTable(['foo' => 'bar']));
+        $sub = Message::fromAMQPMessage($message);
         self::assertEquals('application/json', $sub->get(Message::CONTENT_TYPE));
+        self::assertEquals(['foo' => 'bar'], $sub->headers());
     }
 
     public function test_itCanBeParsedAsAStringMessage()
@@ -157,5 +160,38 @@ class MessageTest extends TestCase
         $message = Message::fromAMQPMessage(new AMQPMessage('test', [Message::CONTENT_TYPE => 'application/yaml']));
         self::assertTrue($message->has(Message::CONTENT_TYPE));
         self::assertNull($message->parsedBody());
+    }
+
+    public function test_headers()
+    {
+        self::assertSame($this->subject, $this->subject->withHeader('type', "mail"));
+        self::assertEquals("mail", $this->subject->headers()['type']);
+        self::assertEquals("mail", $this->subject->get(Message::HEADERS)['type']);
+    }
+
+    public function test_withoutHeader()
+    {
+        $this->subject->withHeader('type', "mail");
+        $this->subject->withHeader('priority', "low");
+        self::assertArrayHasKey("type", $this->subject->headers());
+        self::assertArrayHasKey("priority", $this->subject->headers());
+
+        $this->subject->withoutHeader('type');
+        self::assertArrayNotHasKey("type", $this->subject->headers());
+        self::assertArrayHasKey("priority", $this->subject->headers());
+    }
+
+    public function test_withHeadres()
+    {
+        self::assertSame($this->subject, $this->subject->withHeaders(['type' => "mail"]));
+        self::assertEquals("mail", $this->subject->headers()['type']);
+        self::assertEquals("mail", $this->subject->get(Message::HEADERS)['type']);
+    }
+
+    public function test_removeUnexistingHeader(): void
+    {
+        $this->subject->withHeader('priority', "low");
+        $this->subject->withoutHeader('type');
+        self::assertArrayHasKey("priority", $this->subject->headers());
     }
 }
