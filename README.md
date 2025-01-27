@@ -3,7 +3,7 @@
 [![Latest Version](https://img.shields.io/github/release/slickframework/amqp.svg?style=flat-square)](https://github.com/slickframework/amqp/releases)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/slickframework/amqp/continuous-integration.yml?style=flat-square)](https://github.com/slickframework/amqp/actions/workflows/continuous-integration.yml)
-[![Quality Score](https://img.shields.io/scrutinizer/g/slickframework/amqp/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/slickframework/amqp?branch=master)
+[![Quality Score](https://img.shields.io/scrutinizer/g/slickframework/amqp/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/slickframework/amqp?branch=main)
 [![Total Downloads](https://img.shields.io/packagist/dt/slick/amqp.svg?style=flat-square)](https://packagist.org/packages/slick/amqp)
 
 The Slick AMQP module provides an easy-to-use integration with the Advanced Message Queuing
