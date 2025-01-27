@@ -3,3 +3,4 @@ composer.phar
 .idea
 docker-compose.override.yml
 .phpunit.result.cache
+.DS_Store
